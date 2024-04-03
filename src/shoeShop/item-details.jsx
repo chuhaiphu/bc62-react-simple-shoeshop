@@ -9,9 +9,16 @@ export default class ItemDetails extends Component {
     }
 
     handleOnInputQuantity = (event) => {
-        this.setState({
-            [event.target.id]: event.target.value
-        })
+        if (event.target.value) {
+            this.setState({
+                [event.target.id]: event.target.value
+            })
+        }
+        else {
+            this.setState({
+                [event.target.id]: 0
+            })
+        }
     }
 
     render() {
